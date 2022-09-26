@@ -1,0 +1,15 @@
+name="Aman Priyanshu"
+description="I am a student at Manipal Institute of Technology, currently pursuing my undergrad in Information Technology. My research interests encompass Privacy Preserving Machine Learning, Explainable AI, Fairness, and AI for Social Good. It is mainly focused on the interdisciplinary areas of machine intelligence and security."
+about_me_split="<br><br>"
+about_me="""
+I am a student at Manipal Institute of Technology, currently pursuing my undergrad in Information Technology. My research interests encompass Privacy Preserving Machine Learning, Explainable AI, Fairness, and AI for Social Good. It is mainly focused on the interdisciplinary areas of machine intelligence and security.
+
+My recent ventures within AI research have focused on Reinforcement Learning, Causal Inference and Explainability, Bias Mitigation, and Low-Resource Computations.
+"""
+profile_img="AmanPriyanshuCropped.jpg"
+email="amanpriyanshusms2001@gmail.com"
+email_cool="amanpriyanshusms2001[at]gmail[dot]com"
+twitter_id="AmanPriyanshu6"
+linkedin_id="aman-priyanshu"
+scholar_link="https://scholar.google.com/citations?user=69ZaWuUAAAAJ&hl=en"
+cv_filename="ResumeAmanPriyanshu"

@@ -1,0 +1,4 @@
+date,highlight,description,link
+May 2022,NERDA-Con,"NERDA-Con is a python package, a pipeline for training Named Entity Recognition (NER) with Large Language Models bases by
+incorporating the concept of Elastic Weight Consolidation (EWC) into the NER fine-tuning NERDA pipeline",https://github.com/SupritiVijay/NERDA-Con
+June 2022,DP-SDV,"Creating a Differential Privacy securing Synthetic Data Generation for tabular, relational and time series data.",https://github.com/AmanPriyanshu/DPSDV
