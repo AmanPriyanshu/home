@@ -4,7 +4,7 @@ import calendar
 import datetime
 
 def read_publications(path="./configs/publications.csv"):
-	df = pd.read_csv(path, encoding = "ISO-8859-1")
+	df = pd.read_csv(path)
 	df = df.values
 	unique_years = np.sort(list(set([int(i) for i in df.T[0]])))[::-1]
 	shorts = '<div>\n						<h4>'+' | '.join(['<a href="#'+str(y)+'" class="active">'+str(y)+'</a>' for y in unique_years])+'</h4>\n					</div>'
