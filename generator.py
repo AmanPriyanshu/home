@@ -1,9 +1,9 @@
 import pandas as pd
 import numpy as np
+import calendar
+import datetime
 
-# Delighted to start at <a href="https://twitter.com/kous2v/status/1452667764838215689" target="_blank">Microsoft Research, Montreal</a>. Looking forward to what's ahead!</li>
-
-def read_publications(path="publications.csv"):
+def read_publications(path="./configs/publications.csv"):
 	df = pd.read_csv(path, encoding = "ISO-8859-1")
 	df = df.values
 	unique_years = np.sort(list(set([int(i) for i in df.T[0]])))[::-1]
@@ -17,8 +17,8 @@ def read_publications(path="publications.csv"):
 		output+=top
 		for row in df:
 			if int(row[0])==year:
-				a = '						<li itemscope="" itemtype="https://schema.org/CreativeWork">\n							<i class="fa-li fa fa-file-text pub-icon text-justify" aria-hidden="true"></i>\n							<b>'
-				a += str(row[1])+'</b>&nbsp;&nbsp;<font size="3em">&nbsp;&nbsp;\n							<a href="'
+				a = '						<li><b>'
+				a += str(row[1])+'</b>&nbsp;&nbsp;&nbsp;&nbsp;<a href="'
 				a += str(row[3])+'" target="_blank">Link</a>&nbsp;&nbsp;\n							<h6>'
 				a += str(row[2])+'<br>\n							<i>'
 				a += str(row[4])+'</i></h6>\n						</li>\n'
@@ -28,7 +28,7 @@ def read_publications(path="publications.csv"):
 	return output
 
 
-def read_projects(path="projects.csv"):
+def read_projects(path="./configs/projects.csv"):
 	df = pd.read_csv(path)
 	df = df.values
 	outs = []
@@ -38,7 +38,7 @@ def read_projects(path="projects.csv"):
 	return '\n						'.join(outs)
 
 
-def read_main_experience(path="main_experience.csv"):
+def read_main_experience(path="./configs/main_experience.csv"):
 	df = pd.read_csv(path)
 	df = df.values
 	outs = []
@@ -48,7 +48,7 @@ def read_main_experience(path="main_experience.csv"):
 	outs = '\n						'.join(outs)
 	return outs
 
-def read_main_education(path="main_education.csv"):
+def read_main_education(path="./configs/main_education.csv"):
 	df = pd.read_csv(path)
 	df = df.values
 	outs = []
@@ -59,7 +59,7 @@ def read_main_education(path="main_education.csv"):
 	return outs
 
 
-def read_achievements(path="achievements.csv"):
+def read_achievements(path="./configs/achievements.csv"):
 	df = pd.read_csv(path)
 	df = df.values
 	outs = []
@@ -69,7 +69,24 @@ def read_achievements(path="achievements.csv"):
 	outs = '\n						'.join(outs)
 	return outs
 
+def read_config(path="./configs/config.txt"):
+	with open(path, "r") as f:
+		raw_data = f.readlines()
+	raw_data = [i.strip() for i in raw_data]
+	data = {}
+	for item in raw_data:
+		key, value = item[:item.index('=')], item[item.index('=')+1:]
+		data[key] = value
+	return data
 
+def read_index_html(path="./configs/index.html"):
+	with open(path, "r") as f:
+		raw_data = f.readlines()
+	return raw_data
+
+def write_site(data, path="index.html"):
+	with open(path, "w") as f:
+		f.write("".join(data))
 
 def main():
 	projects = read_projects()
@@ -77,7 +94,23 @@ def main():
 	exp = read_main_experience()
 	edu = read_main_education()
 	ach = read_achievements()
-	print(ach)
+	config = read_config()
+	site = read_index_html()
+	currentDate = datetime.date.today()
+	currentMonthName = calendar.month_name[currentDate.month]
+	currentYear = currentDate.year
+	config['currentYear'] = str(currentYear)
+	config['month'] = currentMonthName
+	for row_index in range(0, len(site)):
+		site[row_index] = site[row_index].replace('$#NAME#$', config['name']).replace('$#DESCRIPTION#$', config['description']).replace('$#ABOUT_ME#$', config['about_me'].replace('$#SPLIT#$', config['about_me_split']))
+		site[row_index] = site[row_index].replace('$#profile_img#$', config['profile_img']).replace('$#EMAIL#$', config['email']).replace('$#TWIITER_ID#$', config['twitter_id']).replace('$#LINKEDIN_ID#$', config['linkedin_id']).replace('$#SCHOLAR_LINK#$', config['scholar_link'])
+		site[row_index] = site[row_index].replace('$#CV_FILENAME#$', config['cv_filename']).replace('$#EMAIL_COOL#$', config['email_cool'])
+		site[row_index] = site[row_index].replace('$#ACHIEVEMENTS_LISTS#$', ach)
+		site[row_index] = site[row_index].replace('$#EDUCATION_LISTS#$', edu)
+		site[row_index] = site[row_index].replace('$#EXPERIENCE_LISTS#$', exp)
+		site[row_index] = site[row_index].replace('$#PROJECT_LISTS#$', projects)
+		site[row_index] = site[row_index].replace('$#PUBLICATION_LISTS#$', pub).replace('$#EDIT_MONTH#$', config['month']).replace('$#EDIT_YEAR#$', config['currentYear'])
+	write_site(site)
 
 if __name__ == '__main__':
 	main()
