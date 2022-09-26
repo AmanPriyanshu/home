@@ -43,7 +43,7 @@ def read_main_experience(path="./configs/main_experience.csv"):
 	df = df.values
 	outs = []
 	for row in df:
-		a = '<li><h5>'+str(row[0])+', '+str(row[1])+', <a href="'+str(row[3])+'" target="_blank">'+str(row[2])+'</a></h5></li>'
+		a = '<li><h5><b>'+str(row[0])+'</b>, '+str(row[1])+', <i><a href="'+str(row[3])+'" target="_blank">'+str(row[2])+'</a></i></h5></li>'
 		outs.append(a)
 	outs = '\n						'.join(outs)
 	return outs
