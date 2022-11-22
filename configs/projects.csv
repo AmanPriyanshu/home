@@ -1,6 +1,7 @@
 date,highlight,description,link
+Oct-22,AdaptKeyBERT,"Built a python library, integrating semi-supervised attention for creating a few-shot & zero-shot domain adaptation technique for keyphrase extraction.",https://pypi.org/project/adaptkeybert/
 May-22,NERDA-Con,"NERDA-Con is a python package, a pipeline for training Named Entity Recognition (NER) with Large Language Models bases by
-incorporating the concept of Elastic Weight Consolidation (EWC) into the NER fine-tuning NERDA pipeline",https://github.com/SupritiVijay/NERDA-Con
+incorporating the concept of Elastic Weight Consolidation (EWC) into the NER fine-tuning NERDA pipeline",https://pypi.org/project/NERDA-Con/
 Jun-22,DP-SDV,"Creating a Differential Privacy securing Synthetic Data Generation for tabular, relational and time series data.",https://github.com/AmanPriyanshu/DPSDV
 Aug-21,DP-HyperparamTuning,"DP-HyperparamTuning offers an array of tools for fast and easy hypertuning of various hyperparameters for the DP-SGD algorithm. We proposed a novel, customizable reward function that allows users to define a single objective function for establishing their desired privacy-utility tradeoff.",https://github.com/AmanPriyanshu/DP-HyperparamTuning
 Aug-21,Hexa Lite,"Created an unsupervised machine learning to extract contextually similar texts. The project was used in indexing Academic Literature, Law Precedents, and Financial Records. The project won Code Innovation Series - a Hackathon in association with GitHub.",https://github.com/AmanPriyanshu/HexaLite
