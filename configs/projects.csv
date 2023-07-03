@@ -1,4 +1,5 @@
 date,highlight,description,link
+Jun-23,ProTaska-GPT,"Specify your dataset of choice, and ProTaska-GPT will understand the dataset with tasks, tutorials, and actionable insights for it. Accelerate your data science journey with ease and efficiency! (Meant for people starting their journey into Data Science.)",https://pypi.org/project/ProTaska-GPT/
 Oct-22,AdaptKeyBERT,"Built a python library, integrating semi-supervised attention for creating a few-shot & zero-shot domain adaptation technique for keyphrase extraction.",https://pypi.org/project/adaptkeybert/
 May-22,NERDA-Con,"NERDA-Con is a python package, a pipeline for training Named Entity Recognition (NER) with Large Language Models bases by
 incorporating the concept of Elastic Weight Consolidation (EWC) into the NER fine-tuning NERDA pipeline",https://pypi.org/project/NERDA-Con/
