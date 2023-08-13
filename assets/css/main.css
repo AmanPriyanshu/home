@@ -70,9 +70,9 @@ body {
 
 .outlined-text {
     font-family: 'Roboto Slab', serif;
-    font-size: 3rem; /* Adjust the font size as needed */
+    font-size: 4rem; /* Adjust the font size as needed */
     text-align: center;
-    letter-spacing: 0.2rem;
+    letter-spacing: 0.5rem;
 }
 
 
