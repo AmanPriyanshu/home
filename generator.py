@@ -110,6 +110,7 @@ def main():
 		site[row_index] = site[row_index].replace('$#EXPERIENCE_LISTS#$', exp)
 		site[row_index] = site[row_index].replace('$#PROJECT_LISTS#$', projects)
 		site[row_index] = site[row_index].replace('$#PUBLICATION_LISTS#$', pub).replace('$#EDIT_MONTH#$', config['month']).replace('$#EDIT_YEAR#$', config['currentYear'])
+		site[row_index] = site[row_index].replace('$#GITHUB_ID#$', config['github_id'])
 	write_site(site)
 
 if __name__ == '__main__':
