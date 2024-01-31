@@ -8,5 +8,5 @@ email_cool=amanpriyanshusms2001[at]gmail[dot]com
 twitter_id=AmanPriyanshu6
 linkedin_id=aman-priyanshu
 scholar_link=https://scholar.google.com/citations?user=69ZaWuUAAAAJ&hl=en
-cv_filename=ResumeAmanPriyanshu
+cv_filename=AmanPriyanshu_Formatted_CV
 github_id=AmanPriyanshu
