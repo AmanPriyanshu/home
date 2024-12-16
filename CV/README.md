@@ -1,1 +1,1 @@
-# File containing my CV
+# Directory containing my CV
